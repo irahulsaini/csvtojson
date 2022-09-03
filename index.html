@@ -35,7 +35,6 @@
                    background-color: var(--bs-light);   
                    border-color: var(--bs-primary);           
                }
-               
           </style>
      </head>
      <body>
@@ -129,7 +128,7 @@
                     <div class="modal-content">
                          <div class="modal-body p-0">
                               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                              <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScLBtJdKOZiDnxlMCLZZqT13rNFkUuNBBZ4nz16pv9Qmb_zMA/viewform?embedded=true" width="100%" height="678" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+                              <iframe data-src="https://docs.google.com/forms/d/e/1FAIpQLScLBtJdKOZiDnxlMCLZZqT13rNFkUuNBBZ4nz16pv9Qmb_zMA/viewform?embedded=true" width="100%" height="678" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
                          </div>
                     </div>
                </div>
@@ -145,17 +144,29 @@
                <button type="button" class="btn btn-telegram" data-share="telegram" data-toggle="tooltip" title="Share on Telegram"><img src="https://tools-and-softwares.github.io/dist/images/icons/telegram.svg"/></button>
                <button type="button" class="btn btn-gmail" data-share="gmail" data-toggle="tooltip" title="Share via Gmail"><img src="https://tools-and-softwares.github.io/dist/images/icons/gmail.svg"/></button>
                <button type="button" class="btn btn-email" data-share="mail" data-toggle="tooltip" title="Share via Email"><img src="https://tools-and-softwares.github.io/dist/images/icons/email.svg"/></button>
-          </div>          
-          <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+          </div>        
+          <script src="https://tools-and-softwares.github.io/dist/js/popper.min.js"></script>
           <script src="https://tools-and-softwares.github.io/dist/js/bootstrap.min.js"></script>
           <script src="https://tools-and-softwares.github.io/dist/js/jquery-3.6.1.min.js"></script>
           <script src="https://tools-and-softwares.github.io/dist/js/functions.js"></script>
           <script src="https://irahulsaini.github.io/simple-social-share-js/dist/simple-social-share.js"></script>
           <script src="https://tools-and-softwares.github.io/dist/js/global.js"></script>
+
           <script type="text/javascript">
                var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-toggle="tooltip"]'))
                var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
                  return new bootstrap.Tooltip(tooltipTriggerEl)
+               });
+          </script>
+          <script type="text/javascript">
+               var form_loaded = 0;
+               var report_modal = document.getElementById('report-a-problem');
+               report_modal.addEventListener('show.bs.modal', function (event) {
+                    //console.log('rrr')
+                    if(form_loaded == 0){
+                         $('iframe',event.target).attr('src',$('iframe',event.target).attr('data-src'));
+                         form_loaded = 1;
+                    }
                })
           </script>
      </body>
