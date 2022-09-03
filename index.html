@@ -15,6 +15,67 @@
           <script type="text/javascript">
                var csvtojson = '';
           </script>
+          <style type="text/css">
+               .btn-close{
+                   position: absolute;
+                   width: 30px;
+                   height: 30px;
+                   z-index: 99;
+                   background-color: #fff;
+                   border-radius: 20px;
+                   top: -10px;
+                   right: -10px;
+                   opacity: 1;
+                   border: 1px solid rgba(0,0,0,.5);
+               }
+               .btn-close:hover,
+               .btn-close:active,
+               .btn-close:focus{
+                   opacity: 1; 
+                   background-color: var(--bs-light);   
+                   border-color: var(--bs-primary);           
+               }
+               .social-share img{
+                    height: 1rem;
+                    max-height: 1rem;
+                    margin-bottom: 0.2rem;
+               }
+               .social-share{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    overflow: auto;
+                    width: 100%;
+                    max-width: 100%;
+                    position: fixed;
+                    bottom: 0;
+                    z-index: 999;
+                    background-color: #fff;
+               }
+               .social-share label{
+                    font-size: 11px;
+                    display: none;
+               }
+               .social-share .btn{
+                    border-radius: 0;
+               }
+               @media screen and (min-width:  767px){
+                    .social-share label{
+                         display: block;
+                    }
+                    .social-share{
+                         display: block;
+                         width: 32px;
+                         max-width: 32px;
+                         height: auto;
+                         bottom: 50%;
+                         transform: translateY(50%);
+                    }
+                    .social-share .btn{
+                         display: block;
+                    }
+               }
+          </style>
      </head>
      <body>
           <header>
@@ -105,27 +166,6 @@
           <div class="modal fade" tabindex="-1" id="report-a-problem">
                <div class="modal-dialog modal-dialog-centered">
                     <div class="modal-content">
-                         <style type="text/css">
-                              .btn-close{
-                                  position: absolute;
-                                  width: 30px;
-                                  height: 30px;
-                                  z-index: 99;
-                                  background-color: #fff;
-                                  border-radius: 20px;
-                                  top: -10px;
-                                  right: -10px;
-                                  opacity: 1;
-                                  border: 1px solid rgba(0,0,0,.5);
-                              }
-                              .btn-close:hover,
-                              .btn-close:active,
-                              .btn-close:focus{
-                                  opacity: 1; 
-                                  background-color: var(--bs-light);   
-                                  border-color: var(--bs-primary);           
-                              }
-                         </style>
                          <div class="modal-body p-0">
                               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                               <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScLBtJdKOZiDnxlMCLZZqT13rNFkUuNBBZ4nz16pv9Qmb_zMA/viewform?embedded=true" width="100%" height="678" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
@@ -133,9 +173,22 @@
                     </div>
                </div>
           </div>
+          <div class="text-center social-share">
+               <!-- <button type="button" class="btn btn-blogger btn-sm" data-share="blogger" data-toggle="tooltip" title="Publish on Blogger"><img src="https://tools-and-softwares.github.io/dist/images/icons/blogger.svg"/></button> -->
+               <label>Share:</label>
+               <button type="button" class="btn btn-facebook btn-sm" data-share="facebook" data-toggle="tooltip" title="Share on Facebook"><img src="https://tools-and-softwares.github.io/dist/images/icons/facebook.svg"/></button>
+               <button type="button" class="btn btn-twitter btn-sm" data-share="twitter" data-toggle="tooltip" title="Share on Twitter"><img src="https://tools-and-softwares.github.io/dist/images/icons/twitter.svg"/></button>
+               <button type="button" class="btn btn-pinterest btn-sm" data-share="pinterest" data-toggle="tooltip" title="Share on Pinterest"><img src="https://tools-and-softwares.github.io/dist/images/icons/pinterest.svg"/></button>
+               <button type="button" class="btn btn-linkedin btn-sm" data-share="linkedin" data-toggle="tooltip" title="Share on Linkedin"><img src="https://tools-and-softwares.github.io/dist/images/icons/linkedin.svg"/></button>
+               <button type="button" class="btn btn-whatsapp btn-sm" data-share="whatsapp" data-toggle="tooltip" title="Share on Whatsapp"><img src="https://tools-and-softwares.github.io/dist/images/icons/whatsapp.svg"/></button>
+               <button type="button" class="btn btn-telegram btn-sm" data-share="telegram" data-toggle="tooltip" title="Share on Telegram"><img src="https://tools-and-softwares.github.io/dist/images/icons/telegram.svg"/></button>
+               <button type="button" class="btn btn-gmail btn-sm" data-share="gmail" data-toggle="tooltip" title="Share via Gmail"><img src="https://tools-and-softwares.github.io/dist/images/icons/gmail.svg"/></button>
+               <button type="button" class="btn btn-email btn-sm" data-share="mail" data-toggle="tooltip" title="Share via Email"><img src="https://tools-and-softwares.github.io/dist/images/icons/email.svg"/></button>
+          </div>          
           <script src="https://tools-and-softwares.github.io/dist/js/bootstrap.min.js"></script>
           <script src="https://tools-and-softwares.github.io/dist/js/jquery-3.6.1.min.js"></script>
           <script src="https://tools-and-softwares.github.io/dist/js/functions.js"></script>
+          <script src="https://irahulsaini.github.io/simple-social-share-js/dist/simple-social-share.js"></script>
           <script src="https://tools-and-softwares.github.io/dist/js/global.js"></script>
      </body>
 </html>
