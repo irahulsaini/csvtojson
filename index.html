@@ -88,28 +88,38 @@
                <div class="bg-dark py-3">
                     <div class="container">
                          <div class="text-center text-muted">
-                              Developed by <a class="text-muted" href="https://www.irahulsaini.com" target="_blank">Rahul Saini</a> | <a class="text-muted" href="https://www.irahulsaini.com/tools" target="_blank">More Tools</a>
+                              Developed by 
+                              <a class="text-muted" href="https://www.irahulsaini.com" target="_blank">Rahul Saini</a> |
+                              <a class="text-muted" href="https://www.irahulsaini.com/tools" target="_blank">More Tools</a> |
+                              <a class="text-muted" href="#report-a-problem" data-bs-toggle="modal">Report a Problem</a>
                          </div>
                          <p class="small text-center text-muted">
                               <small>
                               <strong>Disclaimer:</strong>
-                              We don't take any kind of responsibilities to loss your data while converting to JSON file.
+                                   We don't take any kind of responsibilities to loss your data while converting to JSON file.
                               </small>
                          </p>
                     </div>
                </div>
           </footer>
-          <div class="modal" tabindex="-1" id="report-a-problem">
-               <div class="modal-dialog">
-                    <form class="modal-content">
+          <div class="modal fade" tabindex="-1" id="report-a-problem">
+               <div class="modal-dialog modal-dialog-centered">
+                    <form class="modal-content" action="">
                          <div class="modal-header">
                               <h5 class="modal-title">Report a Problem</h5>
                               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                          </div>
                          <div class="modal-body">
-                              <p>Modal body text goes here.</p>
+                              <div class="form-floating mb-3">
+                                   <input type="text" class="form-control" id="floatingInput" placeholder="name@example.com">
+                                   <label for="floatingInput">Email address</label>
+                              </div>                              
                          </div>
                          <div class="modal-footer">
+                              <input type="hidden" name="city" id="city" class="city"/>
+                              <input type="hidden" name="state" class="state"/>
+                              <input type="hidden" name="country" class="country"/>
+                              <input type="hidden" name="domain" value="irahulsaini.com"/>
                               <button type="submit" class="btn btn-primary">Send Report</button>
                          </div>
                     </form>
@@ -118,6 +128,7 @@
           <script src="https://tools-and-softwares.github.io/dist/js/bootstrap.min.js"></script>
           <script src="https://tools-and-softwares.github.io/dist/js/jquery-3.6.1.min.js"></script>
           <script src="https://tools-and-softwares.github.io/dist/js/functions.js"></script>
+          <script src="https://tools-and-softwares.github.io/dist/js/global.js"></script>
           <script type="text/javascript">
                function output_data(data,form){
                  console.log(data);
