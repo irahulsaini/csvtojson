@@ -104,48 +104,38 @@
           </footer>
           <div class="modal fade" tabindex="-1" id="report-a-problem">
                <div class="modal-dialog modal-dialog-centered">
-                    <form class="modal-content" action="">
-                         <div class="modal-header">
-                              <h5 class="modal-title">Report a Problem</h5>
+                    <div class="modal-content">
+                         <style type="text/css">
+                              .btn-close{
+                                  position: absolute;
+                                  width: 30px;
+                                  height: 30px;
+                                  z-index: 99;
+                                  background-color: #fff;
+                                  border-radius: 20px;
+                                  top: -10px;
+                                  right: -10px;
+                                  opacity: 1;
+                                  border: 1px solid rgba(0,0,0,.5);
+                              }
+                              .btn-close:hover,
+                              .btn-close:active,
+                              .btn-close:focus{
+                                  opacity: 1; 
+                                  background-color: var(--bs-light);   
+                                  border-color: var(--bs-primary);           
+                              }
+                         </style>
+                         <div class="modal-body p-0">
                               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                              <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScLBtJdKOZiDnxlMCLZZqT13rNFkUuNBBZ4nz16pv9Qmb_zMA/viewform?embedded=true" width="100%" height="678" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
                          </div>
-                         <div class="modal-body">
-                              <div class="form-floating mb-3">
-                                   <input type="text" class="form-control" id="floatingInput" placeholder="name@example.com">
-                                   <label for="floatingInput">Email address</label>
-                              </div>                              
-                         </div>
-                         <div class="modal-footer">
-                              <input type="hidden" name="city" id="city" class="city"/>
-                              <input type="hidden" name="state" class="state"/>
-                              <input type="hidden" name="country" class="country"/>
-                              <input type="hidden" name="domain" value="irahulsaini.com"/>
-                              <button type="submit" class="btn btn-primary">Send Report</button>
-                         </div>
-                    </form>
+                    </div>
                </div>
           </div>
           <script src="https://tools-and-softwares.github.io/dist/js/bootstrap.min.js"></script>
           <script src="https://tools-and-softwares.github.io/dist/js/jquery-3.6.1.min.js"></script>
           <script src="https://tools-and-softwares.github.io/dist/js/functions.js"></script>
           <script src="https://tools-and-softwares.github.io/dist/js/global.js"></script>
-          <script type="text/javascript">
-               function output_data(data,form){
-                 console.log(data);
-                 $('.response').val(JSON.stringify(data.preview));
-                 
-                 csvtojson = JSON.stringify(data.response);
-                 $('#results').collapse('show');
-                 $('#btn-download').collapse('show');
-               }
-               $('.form-tool #csvfile').on('change',function(){
-                 $('.form-tool').trigger('submit');
-               });
-               $('#btn-download').on('click',function(e){
-                 e.preventDefault();
-                 $(this).attr('disabled',1)
-                 save_file(csvtojson,'csvtojson.json');
-               })
-          </script>
      </body>
 </html>
